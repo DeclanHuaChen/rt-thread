@@ -1,0 +1,63 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# RapidIO configuration
+#
+menu "Using RapidIO"
+	config RT_USING_RAPIDIO
+	bool "RapidIO support"
+	help
+		If you say Y here, the kernel will include drivers and
+		infrastructure code to support RapidIO interconnect devices.
+
+	if RT_USING_RAPIDIO
+		config RT_RIO_DISC_TIMEOUT
+			int "Discovery timeout duration (seconds)"
+			default 30
+			help
+				Amount of time a discovery node waits for a host to complete
+				enumeration before giving up.
+
+		config RT_RIO_ENABLE_RX_TX_PORTS
+			bool "Enable RapidIO Input/Output Ports"
+			help
+				The RapidIO specification describes a Output port transmit
+				enable and a Input port receive enable. The recommended state
+				for Input ports and Output ports should be disabled. When
+				this switch is set the RapidIO subsystem will enable all
+				ports for Input/Output direction to allow other traffic
+				than Maintenance transfers.
+
+		config RT_RIO_DEBUG
+			bool "RapidIO subsystem debug messages"
+			help
+				Say Y here if you want the RapidIO subsystem to produce a bunch of
+				debug messages to the system log. Select this if you are having a
+				problem with the RapidIO subsystem and want to see more of what is
+				going on.
+
+				If you are unsure about this, say N here.
+		choice
+			prompt "Enumeration method"
+			default RAPIDIO_ENUM_BASIC
+			help
+			There are different enumeration and discovery mechanisms offered
+			for RapidIO subsystem. You may select single built-in method or
+			or any number of methods to be built as modules.
+			Selecting a built-in method disables use of loadable methods.
+
+			If unsure, select Basic built-in.
+
+		config RT_RIO_ENUM_BASIC
+			bool "Basic"
+			help
+			This option includes basic RapidIO fabric enumeration and discovery
+			mechanism similar to one described in RapidIO specification Annex 1.
+		endchoice
+
+		menu "RapidIO Switch drivers"
+			source "$RTT_DIR/components/drivers/rapidio/switches/Kconfig"
+		endmenu
+	endif
+endmenu
+
+

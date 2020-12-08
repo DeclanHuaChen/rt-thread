@@ -1,0 +1,17 @@
+from building import *
+
+cwd     = GetCurrentDir()
+src = Split("""
+rio.c
+rio-access.c
+rio_dev.c
+""")
+
+if GetDepend(['RT_RIO_ENUM_BASIC']):
+    src = src + ['rio-scan.c']
+
+
+CPPPATH = [cwd + '/../include']
+group   = DefineGroup('DeviceDrivers', src, depend = ['RT_USING_RAPIDIO'], CPPPATH = CPPPATH)
+
+Return('group')
