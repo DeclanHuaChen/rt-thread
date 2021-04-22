@@ -1,13 +1,5 @@
 menu "Hardware Drivers Config"
 
-    menu "Onboard Peripheral Drivers"
-        config BSP_USING_XSRIO
-            bool "Xilinx Serial RapidIO Mport driver"
-            select RT_USING_RAPIDIO
-            select RT_USING_SYSTEM_WORKQUEUE
-            default n
-    endmenu
-
     menu "On-chip Peripheral Drivers"
 
     menuconfig BSP_USING_UART

@@ -805,5 +805,4 @@ menu "Using USB"
                 endif
         endif
     endmenu
-    source "$RTT_DIR/components/drivers/rapidio/Kconfig"
 endmenu

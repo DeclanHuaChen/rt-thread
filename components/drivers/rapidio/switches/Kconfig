@@ -1,9 +1,0 @@
-# SPDX-License-Identifier: GPL-2.0-only
-#
-# RapidIO switches configuration
-#
-config RT_RIO_CPS_GEN2
-	tristate "IDT CPS Gen.2 SRIO switch support"
-	default n
-	help
-	  Includes support for ITD CPS Gen.2 serial RapidIO switches.

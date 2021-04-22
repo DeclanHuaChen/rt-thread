@@ -101,9 +101,6 @@
 /* Using USB */
 
 
-/* Using RapidIO */
-
-
 /* POSIX layer and C standard library */
 
 #define RT_USING_LIBC
@@ -166,16 +163,20 @@
 /* peripheral libraries and drivers */
 
 
+/* AI packages */
+
+
 /* miscellaneous packages */
 
 
 /* samples: kernel and components samples */
 
+
+/* entertainment: terminal games and other interesting software packages */
+
 #define SOC_ZYNQMP_R5
 
 /* Hardware Drivers Config */
-
-/* Onboard Peripheral Drivers */
 
 /* On-chip Peripheral Drivers */
 
