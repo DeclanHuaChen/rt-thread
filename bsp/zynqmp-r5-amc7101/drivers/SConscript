@@ -6,9 +6,6 @@ list = os.listdir(cwd)
 CPPPATH = [cwd]
 objs = []
 
-if not GetDepend('BSP_USING_XSRIO'):
-    SrcRemove(src, ['drv_xsrio.c'])
-
 if not GetDepend('BSP_USING_UART'):
     SrcRemove(src, ['drv_uart.c'])
 
