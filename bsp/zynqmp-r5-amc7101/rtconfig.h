@@ -104,6 +104,8 @@
 /* POSIX layer and C standard library */
 
 #define RT_USING_LIBC
+#define RT_USING_PTHREADS
+#define PTHREAD_NUM_MAX 8
 #define RT_USING_POSIX
 
 /* Network */

@@ -433,8 +433,8 @@ static int rh_hw_emmc_init(void)
         status = disk_read(0, sector, 0, 1);
         if (status == RES_OK)
         {
-            /* get the first partition */
-            if (dfs_filesystem_get_partition(&part, sector, 0) != 0)
+            /* get the second partition */
+            if (dfs_filesystem_get_partition(&part, sector, 1) != 0)
             {
                 /* there is no partition */
                 part.offset = 0;
