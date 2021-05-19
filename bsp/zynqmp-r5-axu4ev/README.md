@@ -35,7 +35,7 @@ Each peripheral supporting condition for this BSP is as follows:
 | UART              |     Support     | UART0                            |
 | TIMER     |     Support     |     TTC0 provides system clock         |
 | EMMC | Support | SD0 Controller |
-| EMAC | Support | eh0 Net Interface |
+| EMAC | Support | e0 Net Interface |
 
 ## Execution Instruction
 

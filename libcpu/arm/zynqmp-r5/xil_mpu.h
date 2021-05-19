@@ -62,13 +62,13 @@
 * ----- ---- -------- ---------------------------------------------------
 * 5.00  pkp  02/10/14 Initial version
 * 6.4   asa  08/16/17 Added many APIs for MPU access to make MPU usage
-* 					  user-friendly. The APIs added are: Xil_UpdateMPUConfig,
-* 					  Xil_GetMPUConfig, Xil_GetNumOfFreeRegions,
-* 					  Xil_GetNextMPURegion, Xil_DisableMPURegionByRegNum,
-* 					  Xil_GetMPUFreeRegMask, Xil_SetMPURegionByRegNum, and
-* 					  Xil_InitializeExistingMPURegConfig.
-* 					  Added a new array of structure of type XMpuConfig to
-* 					  represent the MPU configuration table.
+*                       user-friendly. The APIs added are: Xil_UpdateMPUConfig,
+*                       Xil_GetMPUConfig, Xil_GetNumOfFreeRegions,
+*                       Xil_GetNextMPURegion, Xil_DisableMPURegionByRegNum,
+*                       Xil_GetMPUFreeRegMask, Xil_SetMPURegionByRegNum, and
+*                       Xil_InitializeExistingMPURegConfig.
+*                       Added a new array of structure of type XMpuConfig to
+*                       represent the MPU configuration table.
 * </pre>
 *
 
@@ -86,15 +86,15 @@ extern "C" {
 /***************************** Include Files *********************************/
 
 /***************** Macros (Inline Functions) Definitions *********************/
-#define MPU_REG_DISABLED		0U
-#define MPU_REG_ENABLED			1U
-#define MAX_POSSIBLE_MPU_REGS	16U
+#define MPU_REG_DISABLED        0U
+#define MPU_REG_ENABLED            1U
+#define MAX_POSSIBLE_MPU_REGS    16U
 /**************************** Type Definitions *******************************/
 struct XMpuConfig{
-	u32 RegionStatus; /* Enabled or disabled */
-	INTPTR BaseAddress;/* MPU region base address */
-	u64 Size; /* MPU region size address */
-	u32 Attribute; /* MPU region size attribute */
+    u32 RegionStatus; /* Enabled or disabled */
+    INTPTR BaseAddress;/* MPU region base address */
+    u64 Size; /* MPU region size address */
+    u32 Attribute; /* MPU region size attribute */
 };
 
 typedef struct XMpuConfig XMpu_Config[MAX_POSSIBLE_MPU_REGS];
