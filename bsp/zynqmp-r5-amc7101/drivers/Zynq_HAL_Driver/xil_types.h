@@ -70,6 +70,31 @@ typedef void (*XInterruptHandler) (void *InstancePtr);
  */
 typedef void (*XExceptionHandler) (void *InstancePtr);
 
+/**
+ * @brief  Returns 32-63 bits of a number.
+ * @param  n : Number being accessed.
+ * @return Bits 32-63 of number.
+ *
+ * @note    A basic shift-right of a 64- or 32-bit quantity.
+ *          Use this to suppress the "right shift count >= width of type"
+ *          warning when that quantity is 32-bits.
+ */
+#if defined (__aarch64__) || defined (__arch64__)
+#define UPPER_32_BITS(n) ((u32)(((n) >> 16) >> 16))
+#else
+#define UPPER_32_BITS(n) 0U
+#endif
+/**
+ * @brief  Returns 0-31 bits of a number
+ * @param  n : Number being accessed.
+ * @return Bits 0-31 of number
+ */
+#define LOWER_32_BITS(n) ((u32)(n))
+
+
+
+
+
 /************************** Constant Definitions *****************************/
 
 #ifndef TRUE

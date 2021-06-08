@@ -2,6 +2,7 @@
 #include "xil_io.h"
 #include "drv_rio_1553.h"
 
+// 1553模块基地址，根据插槽位置定义
 static uintptr_t const M1553_Handle = 0xb0010000;
 
 static int M1553_Write_Reg(uint32_t chan, uint32_t addres, uint32_t wdata);

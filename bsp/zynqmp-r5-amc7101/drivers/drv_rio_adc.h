@@ -18,14 +18,20 @@ enum adc_range
 };
 
 rt_err_t ADC_Reset();
-rt_err_t ADC_Config_Channel_Mode(uint32_t chan);
+void ADC_Set_Channel_Mask(rt_uint8_t mask);
+rt_err_t ADC_Config_Channel_Mode(uint32_t chan, uint32_t mode);
 rt_err_t ADC_Config_Channel_Range(uint32_t chan, enum adc_range Range_Value);
 rt_err_t ADC_Config_Sample_Clock(uint32_t Sample_Clock);
+rt_err_t ADC_Config_Trig_Type(uint32_t type);
+rt_err_t ADC_Config_Sample_Num(uint32_t num);
 void ADC_Acq_Start();
 void ADC_Acq_Stop();
-rt_err_t ADC_Read_BRAM_Data(uint32_t *bData, size_t size);
-rt_err_t ADC_Read_Average_Data(double *result, size_t size);
-
+rt_err_t ADC_Read_Temperature(double *temper);
+rt_err_t ADC_Write_Staic_Cal();
+rt_err_t ADC_Updata_Cal(int calrange, int calvalue);
+rt_err_t ADC_Read_Cal(float *data, rt_uint32_t size);
+rt_err_t ADC_Read_Raw_Data(uint32_t *bData, size_t size);
+rt_err_t ADC_Read_Average_Data(double *result, size_t size, double GainCoff);
 
 #ifdef __cplusplus
 }

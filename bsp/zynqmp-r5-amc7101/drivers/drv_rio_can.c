@@ -3,6 +3,7 @@
 #include "xil_io.h"
 #include "drv_rio_can.h"
 
+// CAN模块基地址，根据插槽位置定义
 static uintptr_t const can_Handle = 0xb0010000;
 
 CAN_CHCONFIG_PARA gCanCfgPara = {0, 0, 0, 0, 0};

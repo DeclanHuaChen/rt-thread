@@ -4,7 +4,8 @@
 #include "xil_io.h"
 #include "drv_rio_uart.h"
 
-static uintptr_t const uart_Handle = 0xb0020000;
+// UART模块基地址，根据插槽位置定义
+static uintptr_t const uart_Handle = 0xb0010000;
 
 static uint32_t UART_Command_Code;
 static uint32_t UART_HALF[4] = {0, 0, 0, 0}; //全双工
